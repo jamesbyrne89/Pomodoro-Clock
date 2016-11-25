@@ -1,4 +1,20 @@
 
+@font-face {
+  font-family: 'Brandon Grotesque Black';
+  src:  url('../fonts/Brandon_blk.WOFF') format('woff'),
+        url('../myfont.woff') format('woff');
+    }
+@font-face {
+  font-family: 'Brandon Grotesque Bold';
+  src:  url('../fonts/Brandon_bld.WOFF') format('woff'),
+        url('../myfont.woff') format('woff');
+    }
+    @font-face {
+  font-family: 'Brandon Grotesque Regular';
+  src:  url('../fonts/Brandon_Reg.WOFF') format('woff'),
+        url('../myfont.woff') format('woff');
+    }
+
 
 * {
 box-sizing: border-box;
@@ -14,19 +30,29 @@ text-align: center;
 width: 100%;
 height: 100%;
 margin: 0;
-font-family: 'palanquin', helvetica, arial, sans-serif;
+font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
 font-weight: normal;
 font-size: 1.25rem;
 }
 
 h1 {
-	font-family: 'palanquin dark', helvetica, arial, sans-serif;
+	font-family: 'Brandon Grotesque Bold', helvetica, arial, sans-serif;
 	font-weight: bold;
 	font-size: 4.5rem;
 }
 
 h2 {
 	margin: 0 auto;
+}
+
+a {
+	color: #ff4632;
+	text-decoration: none;
+}
+
+a:hover {
+color: #8c1932;
+	    transition: background-color .15s ease,border-color .15s ease,color .15s ease;
 }
 
 .app-wrapper {
@@ -46,17 +72,24 @@ h2 {
 }
 
 .btn {
-	color: #ff4632;
+	color: #000;
 	font-size: 2.75rem;
 	line-height: 1.25rem;
 	margin: 20px 3rem 0px 3rem;
 	cursor: pointer;
 	padding: 4px;
-	border: solid 2px #ff4632;
+	border: solid 2px #000;
 	border-radius: 50%;
 	height: 50px;
 	width: 50px;
 	background: transparent;
+}
+
+.btn:hover {
+	background: #000;
+	color: #ffc864;
+	transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+
 }
 
 .item {
@@ -83,8 +116,10 @@ svg {
 }
 
 .lg-btn {
-	padding: 17px 56px 15px;
+	padding: 15px 56px 13px;
+	font-family: 'Brandon Grotesque Bold', helvetica, arial, sans-serif;
 	color: #fff;
+	font-size: 1.25rem;
 	background: #ff4632;
 	width: auto;
 	border: none;
@@ -96,6 +131,19 @@ svg {
 	margin: auto;
 }
 
+.lg-btn:hover {
+	background: #8c1932;
+	    transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+}
+
+#remaining-time {
+	display: block;
+	margin-bottom: 20px;
+}
+
+#session-less {
+	line-height: 0rem;
+}
 
 /*--------------------------------------------------------------
 ## Footer
@@ -106,7 +154,7 @@ footer {
 	text-align: center;
 	width: calc(100% - 40px);
 	position: absolute;
-	bottom: -20px;
+	bottom: -60px;
 	padding: 20px;
 	display: block;
 	box-sizing: border-box;

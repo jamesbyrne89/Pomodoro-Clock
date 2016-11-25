@@ -1,26 +1,26 @@
 $(document).ready(function(){
 
-// Play sound
-var myAudio = new Audio("");
-
 
 var count = parseInt($('#session-num').html());
 var breakCount = parseInt($('#break-num').html());
-var counter = parseInt($('#break-num').html());
+var counter = parseInt($('#counter').html());
 
 $('#reset-button').hide();
+$("#remaining-time").hide();
 
 // Session time buttons
+
 $('#session-less').click(function(){
-	if (count>5)
-count-=5;
+	if (count > 5)
+count -= 5;
 $('#session-num').html(count);
 $('#counter').html(count);
+
 });
 
 $('#session-more').click(function(){
-	if (count>5)
-count+=5;
+	if (count > 5)
+count += 5;
 $('#session-num').html(count);
 $('#counter').html(count);
 });
@@ -39,46 +39,76 @@ breakCount += 5;
 $('#break-num').html(breakCount);
 });
 
-// Countdown
+// Start countdown
 
 $('#start-button').click(function(){
 var counter = setInterval(timer, 1000);
+count*=60;
 function timer(){
 
+// Show time remaining
+$('#reset-button').show();
+$("#remaining-time").show();
 // Hide variables
 
 $('.buttons-wrapper').hide();
-
-
-
 	count -= 1;
 if (count===0){
-	clearInterval(counter)
+
+	// Play sound
+	var myAudio = new Audio("Temple_Bell.mp3");
 	myAudio.play();
+	clearInterval(counter);
+	var startBreak = setInterval (breakTimer, 1000);
+}
+if (count%60>=10){
+	$('#counter').html(Math.floor(count/60)+":"+count%60);
+	}
+else{
+	$('#counter').html(Math.floor(count/60)+":"+"0"+count%60);
 }
 
-$('break-num').html(count);
 
+// Start break countdown
+breakCount*=60;
+function breakTimer(){
+	
+	$("#remaining-time").show();
+	$("#remaining-time").html('Remaining break time: ');
+	$("#break-num").show();
+	breakCount -= 1;
+
+	// Play sound
+	var myAudio = new Audio("Temple_Bell.mp3");
+	myAudio.play();
+
+	 $("#break-num, #remaining-time").hide();
+		if(breakCount===0){
+clearInterval(startBreak);
+ $("#break-num, #remaining-time").hide();
+	}
+	 if (breakCount%60>=10){
+	$('#counter').html(Math.floor(breakCount/60)+":"+count%60);
+	}
+else{
+	$('#counter').html(Math.floor(breakCount/60)+":"+"0"+count%60);
 }
-
+}
+}
 
 });
 
-var countDownTimer = function(){
+// Reset button
 
-var time = 10; /* how long the timer runs for */
-var initialOffset = '440';
-var i = 1
-var interval = setInterval(function() {
-    $('.circle_animation').css('stroke-dashoffset', initialOffset-(i*(initialOffset/time)));
-    $('h2').text(i);
-    if (i == time) {
-        clearInterval(interval);
-    }
-    i++;  
-}, 1000);
+$('#reset-button').click(function(){
 
-};
+count = 25;
+breakCount = 5;
+$('#counter').html(count);
+clearInterval(count);
+$('#break-num').html(breakCount);
+ $(".buttons-wrapper, #break-num, #remaining-time").show();
 
+})
 
 });
