@@ -14,7 +14,7 @@ $('#session-less').click(function(){
 	if (count > 5)
 count -= 5;
 $('#session-num').html(count);
-$('#counter').html(count);
+$('#counter').html(count+":00");
 
 });
 
@@ -22,7 +22,7 @@ $('#session-more').click(function(){
 	if (count > 5)
 count += 5;
 $('#session-num').html(count);
-$('#counter').html(count);
+$('#counter').html(count+":00");
 });
 
 // Break time buttons
@@ -50,7 +50,7 @@ function timer(){
 $('#reset-button').show();
 $("#remaining-time").show();
 // Hide variables
-
+$("#start-button").hide();
 $('.buttons-wrapper').hide();
 	count -= 1;
 if (count===0){
@@ -88,10 +88,10 @@ clearInterval(startBreak);
  $("#break-num, #remaining-time").hide();
 	}
 	 if (breakCount%60>=10){
-	$('#counter').html(Math.floor(breakCount/60)+":"+count%60);
+	$('#counter').html(Math.floor(breakCount/60)+":"+breakCount%60);
 	}
 else{
-	$('#counter').html(Math.floor(breakCount/60)+":"+"0"+count%60);
+	$('#counter').html(Math.floor(breakCount/60)+":"+"0"+breakCount%60);
 }
 }
 }
@@ -102,13 +102,14 @@ else{
 
 $('#reset-button').click(function(){
 
-count = 25;
-breakCount = 5;
-$('#counter').html(count);
-clearInterval(count);
+$('#counter').html(Math.floor(count/60)+":"+count%60);
+clearInterval(timer);
+clearInterval(breakTimer);
 $('#break-num').html(breakCount);
  $(".buttons-wrapper, #break-num, #remaining-time").show();
 
 })
+
+
 
 });

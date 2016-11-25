@@ -17,8 +17,7 @@
     <body>
 
 <div class="app-wrapper">
-<h1>Pomodoro Clock</h1>
-<div class="current-time">The time right now is:</div>
+<h1>Pomodoro</h1>
 <div class="buttons-wrapper top-btn-wrapper">
     <h2>Session length:</h2>
         <button id="session-less" class="btn">-</button>
@@ -36,15 +35,9 @@
   <button id="start-button" class="lg-btn">Start</button> 
 <div class="timer-wrapper">
    <h2 id="remaining-time">Time remaining:</h2>
-    <div class="item html">
 
-        <h2 id="counter">25</h2>
-        <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-         <g>
-          <title>Layer 1</title>
-          <circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="8" stroke="#ff4632" fill="none"/>
-         </g>
-        </svg>
+        <h2 id="counter">25:00</h2>
+     <canvas id="seconds" width="80" height="80"></canvas>
     </div>
     <button id="reset-button" class="lg-btn">Reset</button>
 </div>

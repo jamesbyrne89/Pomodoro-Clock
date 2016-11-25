@@ -28,6 +28,7 @@ body {
 border: solid 20px #fff;
 text-align: center;
 width: 100%;
+min-height: 100vh;
 height: 100%;
 margin: 0;
 font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
@@ -39,6 +40,9 @@ h1 {
 	font-family: 'Brandon Grotesque Bold', helvetica, arial, sans-serif;
 	font-weight: bold;
 	font-size: 4.5rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5rem;
+	margin-bottom: 50px;
 }
 
 h2 {
@@ -56,12 +60,14 @@ color: #8c1932;
 }
 
 .app-wrapper {
-	margin: 10% auto;
+	margin: 5% auto;
 	width: 50%;
 }
 
 .buttons-wrapper {
-	margin: 30px auto;
+	margin: 0px auto 30px auto;
+	display: inline-block;
+	font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
 }
 
 #session-num, #break-num {
@@ -69,13 +75,17 @@ color: #8c1932;
 	width: 40px;
 	text-align: center;
 	font-size: 3rem;
+	font-weight: bold;
+	font-family: 'Brandon Grotesque Bold', helvetica, arial, sans-serif;
 }
+
+
 
 .btn {
 	color: #000;
 	font-size: 2.75rem;
 	line-height: 1.25rem;
-	margin: 20px 3rem 0px 3rem;
+	margin: 20px 2rem 0px 2rem;
 	cursor: pointer;
 	padding: 4px;
 	border: solid 2px #000;
@@ -92,36 +102,13 @@ color: #8c1932;
 
 }
 
-.item {
-    position: relative;
-    margin: auto;
-}
-
-.item h2 {
-    text-align:center;
-    position: absolute;
-    line-height: 125px;
-    width: 100%;
-}
-
-svg {
-   -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-}
-
-.circle_animation {
-  stroke-dasharray: 440; /* this value is the pixel circumference of the circle */
-  stroke-dashoffset: 440;
-  transition: all 1s linear;
-}
-
 .lg-btn {
 	padding: 15px 56px 13px;
 	font-family: 'Brandon Grotesque Bold', helvetica, arial, sans-serif;
 	color: #fff;
 	font-size: 1.25rem;
 	background: #ff4632;
-	width: auto;
+	width: 280px;
 	border: none;
 	border-radius: 100px;
 	text-transform: uppercase;
@@ -129,6 +116,7 @@ svg {
 	cursor: pointer;
 	display: block;
 	margin: auto;
+	letter-spacing: 0.1875rem;
 }
 
 .lg-btn:hover {
@@ -139,10 +127,81 @@ svg {
 #remaining-time {
 	display: block;
 	margin-bottom: 20px;
+	font-size: 2.5rem;
 }
 
 #session-less {
 	line-height: 0rem;
+}
+
+
+.timer-wrapper {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-size: 4.5rem;
+}
+
+
+
+/*--------------------------------------------------------------
+## Circle animation
+--------------------------------------------------------------*/
+
+
+.wrapper {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  background: white;
+}
+
+.pie {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background: #08C;
+  border: 10px solid rgba(0,0,0,0.4);
+}
+
+.spinner {
+  border-radius: 125px 0 0 125px;
+  z-index: 200;
+  border-right: none;
+  animation: rota 10s linear infinite;
+}
+
+.filler {
+  border-radius: 0 125px 125px 0;
+  z-index: 100;
+  border-left: none;
+  animation: fill 10s steps(1, end) infinite;
+  left: 50%;
+  opacity: 0;
+}
+
+.mask {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  z-index: 300;
+  opacity: 1;
+  background: inherit;
+  animation: mask 10s steps(1, end) infinite;
+}
+
+@keyframes rota {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fill {
+  0%        { opacity: 0; }
+  50%, 100% { opacity: 1; }
+}
+
+@keyframes mask {
+  0%        { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
 
 /*--------------------------------------------------------------
@@ -150,11 +209,11 @@ svg {
 --------------------------------------------------------------*/
 
 footer {
-	font-size: 0.75rem;
+	font-size: 0.875rem;
 	text-align: center;
 	width: calc(100% - 40px);
 	position: absolute;
-	bottom: -60px;
+	bottom: 20px;
 	padding: 20px;
 	display: block;
 	box-sizing: border-box;
@@ -165,15 +224,15 @@ footer {
 --------------------------------------------------------------*/
 
 @media screen and (max-width: 1120px){
-
-}
-
-@media screen and (max-width: 900px){
-
 .app-wrapper {
 	margin: 10% auto;
 	width: 90%;
 }
+}
+
+@media screen and (max-width: 900px){
+
+
 }
 
 @media screen and (max-width: 768px){
@@ -182,12 +241,15 @@ footer {
 	margin: 10% auto;
 	width: 100%;
 }
-
+.buttons-wrapper {
+	display: block;
+}
 
 }
 
 @media screen and (max-width: 580px){
 h1 {
+	font-size: 3.75rem;
 	line-height: 4rem;
 }
 
@@ -195,21 +257,46 @@ h1 {
 
 @media screen and (max-width: 480px){
 h1 {
-	font-size: 3rem;
+	font-size: 2.75rem;
 	line-height: 2.75rem;
 }
 }
 
 @media screen and (max-width: 380px){
 
-h1 {
-	font-size: 2.75rem;
-	line-height: 2.5rem;
+
+.buttons-wrapper h2 {
+	font-size: 1.75rem;
+}
+
+#session-num, #break-num {
+	font-size: 1.75rem;
+}
+
+.btn {
+	font-size: 1.75rem;
+	    height: 30px;
+    width: 30px;
+}
+
+body {
+	border: solid 5px #fff;
+}
+
+.lg-btn {
+	width: 80vw;
+}
+#counter {
+	font-size: 6rem;
 }
 
 }
 
 @media screen and (max-width: 320px){
+h1 {
+	font-size: 2rem;
+	line-height: 1.5rem;
+}
 
 }
 
