@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+     <link href="https://fonts.googleapis.com/css?family=Palanquin:300,400|Palanquin+Dark:400,700" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/pomodoro.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+<div class="app-wrapper">
+<h1>Pomodoro Clock</h1>
+<div class="current-time">The time right now is:</div>
+<div class="buttons-wrapper top-btn-wrapper">
+    <h2>Session length:</h2>
+        <button id="session-less" class="btn">-</button>
+        <h2 id="session-num">25</h2>
+        <button id="session-more" class="btn">+</button>
+</div>
+
+<div class="buttons-wrapper bottom-btn-wrapper">
+    <h2>Break length:</h2>
+        <button id="break-less" class="btn">-</button>
+            <h2 id="break-num">5</h2>
+        <button id="break-more" class="btn">+</button>
+      
+</div>
+  <button id="start-button" class="lg-btn">Start</button> 
+<div class="timer-wrapper">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <div class="item html">
+        <h2 id="counter">25</h2>
+        <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+         <g>
+          <title>Layer 1</title>
+          <circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="8" stroke="#ff4632" fill="none"/>
+         </g>
+        </svg>
+    </div>
+    <button id="reset-button" class="lg-btn">Reset</button>
+</div>
+    
+    </div>
+
+      <footer>
+      A coding project by James Byrne
+      </footer>  
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/pomodoro.js"></script>
+    </body>
+</html>
