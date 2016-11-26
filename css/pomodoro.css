@@ -93,6 +93,11 @@ color: #8c1932;
 	height: 50px;
 	width: 50px;
 	background: transparent;
+	text-align: center;
+}
+
+#break-less, #session-less {
+	padding-top: 0px;
 }
 
 .btn:hover {
@@ -115,7 +120,7 @@ color: #8c1932;
 	font-weight: bold;
 	cursor: pointer;
 	display: block;
-	margin: auto;
+	margin: 30px auto;
 	letter-spacing: 0.1875rem;
 }
 
@@ -128,6 +133,7 @@ color: #8c1932;
 	display: block;
 	margin-bottom: 20px;
 	font-size: 2.5rem;
+	font-family: 'Brandon Grotesque Bold', helvetica, arial, sans-serif;
 }
 
 #session-less {
@@ -136,74 +142,49 @@ color: #8c1932;
 
 
 .timer-wrapper {
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 	font-size: 4.5rem;
 }
 
-
+#time {
+	margin: 20px auto;
+}
 
 /*--------------------------------------------------------------
 ## Circle animation
 --------------------------------------------------------------*/
 
 
-.wrapper {
-  width: 250px;
-  height: 250px;
-  position: relative;
-  background: white;
+.clock {
+    position: relative;
 }
 
-.pie {
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  background: #08C;
-  border: 10px solid rgba(0,0,0,0.4);
+.val {
+    margin:0;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    line-height: 122px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color:#FFF;
+    font-weight: bold;
+    text-align: center;
 }
 
-.spinner {
-  border-radius: 125px 0 0 125px;
-  z-index: 200;
-  border-right: none;
-  animation: rota 10s linear infinite;
-}
 
-.filler {
-  border-radius: 0 125px 125px 0;
-  z-index: 100;
-  border-left: none;
-  animation: fill 10s steps(1, end) infinite;
-  left: 50%;
-  opacity: 0;
+.text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color:#FFF;
+    background:#64b5d1;   
+    text-align: center;   
+    text-transform: uppercase;   
 }
-
-.mask {
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  z-index: 300;
-  opacity: 1;
-  background: inherit;
-  animation: mask 10s steps(1, end) infinite;
-}
-
-@keyframes rota {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes fill {
-  0%        { opacity: 0; }
-  50%, 100% { opacity: 1; }
-}
-
-@keyframes mask {
-  0%        { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
-
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
@@ -214,8 +195,9 @@ footer {
 	width: calc(100% - 40px);
 	position: absolute;
 	bottom: 20px;
+	left: 0px;
 	padding: 20px;
-	display: block;
+	display: none;
 	box-sizing: border-box;
 }
 
