@@ -1,4 +1,8 @@
 
+/*--------------------------------------------------------------
+## Fonts
+--------------------------------------------------------------*/
+
 @font-face {
   font-family: 'Brandon Grotesque Black';
   src:  url('../fonts/Brandon_blk.WOFF') format('woff'),
@@ -15,6 +19,10 @@
         url('../myfont.woff') format('woff');
     }
 
+
+/*--------------------------------------------------------------
+## General styles
+--------------------------------------------------------------*/
 
 * {
 box-sizing: border-box;
@@ -64,6 +72,23 @@ color: #8c1932;
 	width: 50%;
 }
 
+
+.timer-wrapper {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-size: 4.5rem;
+}
+
+#time {
+	margin: 20px auto;
+}
+
+
+
+/*--------------------------------------------------------------
+## Buttons
+--------------------------------------------------------------*/
+
 .buttons-wrapper {
 	margin: 0px auto 30px auto;
 	display: inline-block;
@@ -78,8 +103,6 @@ color: #8c1932;
 	font-weight: bold;
 	font-family: 'Brandon Grotesque Bold', helvetica, arial, sans-serif;
 }
-
-
 
 .btn {
 	color: #000;
@@ -141,50 +164,12 @@ color: #8c1932;
 }
 
 
-.timer-wrapper {
-	margin-top: 30px;
-	margin-bottom: 30px;
-	font-size: 4.5rem;
-}
-
-#time {
-	margin: 20px auto;
-}
 
 /*--------------------------------------------------------------
 ## Circle animation
 --------------------------------------------------------------*/
 
 
-.clock {
-    position: relative;
-}
-
-.val {
-    margin:0;
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    line-height: 122px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 35px;
-    color:#FFF;
-    font-weight: bold;
-    text-align: center;
-}
-
-
-.text {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    color:#FFF;
-    background:#64b5d1;   
-    text-align: center;   
-    text-transform: uppercase;   
-}
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
@@ -195,9 +180,8 @@ footer {
 	width: calc(100% - 40px);
 	position: absolute;
 	bottom: 20px;
-	left: 0px;
 	padding: 20px;
-	display: none;
+	display: block;
 	box-sizing: border-box;
 }
 
