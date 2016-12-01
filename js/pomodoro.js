@@ -7,7 +7,7 @@
     var i = 0;
     var j = 0;
     var sessionLength = 25;
-    var breakTimevar = 5;
+    var breakTime = 5;
     var timer;
     var seconds;
     var onlyseconds;
@@ -29,14 +29,14 @@
         $('#session-num').html(sessionLength);
       });
       $('#break-more').click(function() {
-        breakTimevar++;
-        $('#break-num').html(breakTimevar);
+        breakTime++;
+        $('#break-num').html(breakTime);
       });
       $('#break-less').click(function() {
-        if (breakTimevar > 1) {
-          breakTimevar--;
+        if (breakTime > 1) {
+          breakTime--;
         }
-        $('#break-num').html(breakTimevar);
+        $('#break-num').html(breakTime);
       });
 
       $('#start-button').click(function() {
@@ -95,7 +95,7 @@
 
       function breakTimeStart() {
         j = 1;
-        currentSession = breakTimevar;
+        currentSession = breakTime;
         seconds = currentSession * 60;
         minutes = currentSession;
         onlyseconds = 0;
@@ -144,19 +144,20 @@
       }
 
       /* Reset button */
-
+console.log(currentSession);
       $('#reset-button').click(function() {
         clearTimeout(timer);
         i = 0;
         j = 0;
-        breakTimevar = 6;
+        breakTime = 6;
         timer = 0;
         seconds = 0;
         onlyseconds = 0;
         minutes = 0;
         currentSession = Math.round(sessionLength);
+        
         $('#start-button').text('Start');
-        $('#time').html(currentSession+":00");
+        $('#time').html(Math.round(currentSession)+":00");
 
       });
 

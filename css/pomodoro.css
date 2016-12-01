@@ -107,7 +107,6 @@ color: #8c1932;
 .btn {
 	color: #000;
 	font-size: 2.75rem;
-	line-height: 1.25rem;
 	margin: 20px 2rem 0px 2rem;
 	cursor: pointer;
 	padding: 4px;
@@ -120,7 +119,13 @@ color: #8c1932;
 }
 
 #break-less, #session-less {
-	padding-top: 0px;
+		line-height: 0rem;
+		padding-bottom: 8px;
+		margin-top: 5px;
+}
+
+#session-more, #break-more {
+		line-height: 2.6rem;
 }
 
 .btn:hover {
@@ -157,10 +162,6 @@ color: #8c1932;
 	margin-bottom: 20px;
 	font-size: 2.5rem;
 	font-family: 'Brandon Grotesque Bold', helvetica, arial, sans-serif;
-}
-
-#session-less {
-	line-height: 0rem;
 }
 
 
