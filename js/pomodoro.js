@@ -2,22 +2,19 @@
 
     $('document').ready(function() {
 
-
-
     var i = 0;
     var j = 0;
     var sessionLength = 25;
     var breakTime = 5;
-    var timer;
+    var timer = 0;
     var seconds;
     var onlyseconds;
     var minutes;
-    var currentSession = sessionLength;
+
       /* Buttons */
 
       $('#session-more').click(function() {
         sessionLength++;
-        console.log(sessionLength);
         $('#session-num').html(sessionLength);
         $('#time').html(sessionLength+":00");
       });
@@ -43,18 +40,16 @@
 
         switch (i) {
 
-          case 0:
-         
+          case 0:      
             currentSession = sessionLength;
             seconds = currentSession * 60;
             minutes = Math.round(currentSession);
             onlyseconds = 0;
             i = 1;
-            if (j === 0) {
-
-              started();
-              
-            } else
+            if (j === 0 ) {
+              started();  
+            }
+            else
               breakTimeStart();
             break;
 
@@ -69,7 +64,7 @@
          $('#start-button').text('Pause');
         j = 0;
         $('#remaining-time').html('Time remaining:');
-
+        console.log(hasBeenReset);
         seconds -= 1;
         if (onlyseconds <= 0.999) {
           minutes--;
@@ -83,6 +78,7 @@
         if (minutes < 0) {
           $('#time').html('0:00');
         }
+  
         if (minutes >= 0) {
           timer = setTimeout(function() {
             started();
@@ -144,7 +140,7 @@
       }
 
       /* Reset button */
-console.log(currentSession);
+
       $('#reset-button').click(function() {
         clearTimeout(timer);
         i = 0;
@@ -154,8 +150,7 @@ console.log(currentSession);
         seconds = 0;
         onlyseconds = 0;
         minutes = 0;
-        currentSession = Math.round(sessionLength);
-        
+        currentSession = sessionLength;
         $('#start-button').text('Start');
         $('#time').html(Math.round(currentSession)+":00");
 
