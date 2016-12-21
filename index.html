@@ -17,19 +17,25 @@
 
 <div class="app-wrapper">
 <h1>Pomodoro</h1>
+      <footer>
+      A coding project by <a href="http://jamestbyrne.com">James Byrne</a>
+      </footer> 
 <div class="buttons-wrapper top-btn-wrapper">
     <h2>Session length:</h2>
-        <button id="session-less" class="btn">-</button>
+    <div class="top-btn-wrapper--inner">
+        <button id="session-less" class="btn"><span class="minus">-</span></button>
         <h2 id="session-num">25</h2>
-        <button id="session-more" class="btn">+</button>
+        <button id="session-more" class="btn"><span class="plus">+</span></button>
+</div>
 </div>
 
 <div class="buttons-wrapper bottom-btn-wrapper">
     <h2>Break length:</h2>
-        <button id="break-less" class="btn"><span id="minus">-</span></button>
+    <div class="top-btn-wrapper--inner">
+        <button id="break-less" class="btn"><span class="minus">-</span></button>
             <h2 id="break-num">5</h2>
-        <button id="break-more" class="btn"><span id="plus">+</span></button>
-      
+        <button id="break-more" class="btn"><span class="plus">+</span></button>
+ </div>     
 </div>
    
 <div class="timer-wrapper">
@@ -58,9 +64,7 @@
     
     </div>
 
-      <footer>
-      A coding project by <a href="http://jamestbyrne.com">James Byrne</a>
-      </footer>  
+ 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>

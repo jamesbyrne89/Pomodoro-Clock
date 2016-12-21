@@ -14,16 +14,16 @@
       /* Buttons */
 
       $('#session-more').click(function() {
-        sessionLength++;
-        $('#session-num').html(sessionLength);
-        $('#time').html(sessionLength+":00");
+        Math.round(sessionLength++);
+        $('#session-num').html(sessionLength.toFixed(0));
+        $('#time').html(sessionLength.toFixed(0)+":00");
       });
       $('#session-less').click(function() {
         if (sessionLength > 1) {
           sessionLength--;
-          $('#time').html(sessionLength+":00");
+          $('#time').html(sessionLength.toFixed(0)+":00");
         }
-        $('#session-num').html(sessionLength);
+        $('#session-num').html(sessionLength.toFixed(0));
       });
       $('#break-more').click(function() {
         breakTime++;
@@ -61,10 +61,11 @@
       });
 
       function started() {
+        $('#reset-button').hide();
+        currentSession = sessionLength;
          $('#start-button').text('Pause');
         j = 0;
         $('#remaining-time').html('Time remaining:');
-        console.log(hasBeenReset);
         seconds -= 1;
         if (onlyseconds <= 0.999) {
           minutes--;
@@ -110,7 +111,7 @@
         if (onlyseconds < 10) {
           onlyseconds = '0' + onlyseconds;
         }
-        $('#time').html(minutes + ':' + onlyseconds);
+        $('#time').html(minutes + ':' + " " + onlyseconds);
         if (minutes < 0) {
           $('#time').html('0:00');
         }
@@ -127,6 +128,7 @@
       }
 
       function stopped() {
+        $('#reset-button').show();
         sessionLength = seconds / 60;
         clearTimeout(timer);
         $('#start-button').text('Start');
@@ -147,13 +149,54 @@
         j = 0;
         breakTime = 6;
         timer = 0;
-        seconds = 0;
+        seconds = currentSession * 60;
         onlyseconds = 0;
         minutes = 0;
-        currentSession = sessionLength;
+        sessionLength = currentSession;
         $('#start-button').text('Start');
         $('#time').html(Math.round(currentSession)+":00");
-
       });
 
     });
+
+
+  // Source: http://www.antiyes.com/jquery-blink-plugin
+// http://www.antiyes.com/jquery-blink/jquery-blink.js
+//(function($) {
+  // $.fn.blink = function(options) {
+      //  var defaults = {
+        //    delay: 500
+       // };
+       // var options = $.extend(defaults, options);
+
+      //  return this.each(function() {
+      //      var obj = $(this);
+      //      setInterval(function() {
+       //         if ($(obj).css("visibility") == "visible") {
+       //             $(obj).css('visibility', 'hidden');
+       //         }
+       //         else {
+       //             $(obj).css('visibility', 'visible');
+       //         }
+      //      }, options.delay);
+      //  });
+   // }
+//}(jQuery)) 
+
+/////////////////////////////////////////////
+///////////////////////////////////////////// 
+/////////////////////////////////////////////
+
+/// $(document).ready(function() {
+ // default is 500ms blink interval.
+   // $('.blink_second').blink({
+       // delay: 100
+   // }); // causes a 100ms blink interval.
+   // $('.blink_third').blink({
+     //   delay: 1500
+  //  }); // causes a 1500ms blink interval.     
+//});
+
+/////////////////////////////////////////////
+///////////////////////////////////////////// 
+///////////////////////////////////////////// 
