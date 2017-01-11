@@ -1,202 +1,125 @@
- 
+       // Declare variables
 
-    $('document').ready(function() {
+      let currentSession = 25;
+      let seconds = currentSession * 60; 
+      let minutes = Math.floor(seconds / 60);
+      let breakTime = 5;
+      let remainderSeconds = seconds % 60; 
+      let started = false;
+      let countDown;
 
-    var i = 0;
-    var j = 0;
-    var sessionLength = 25;
-    var breakTime = 5;
-    var timer = 0;
-    var seconds;
-    var onlyseconds;
-    var minutes;
 
-      /* Buttons */
+      // Session length buttons
 
-      $('#session-more').click(function() {
-        Math.round(sessionLength++);
-        $('#session-num').html(sessionLength.toFixed(0));
-        $('#time').html(sessionLength.toFixed(0)+":00");
-      });
-      $('#session-less').click(function() {
-        if (sessionLength > 1) {
-          sessionLength--;
-          $('#time').html(sessionLength.toFixed(0)+":00");
-        }
-        $('#session-num').html(sessionLength.toFixed(0));
-      });
-      $('#break-more').click(function() {
-        breakTime++;
-        $('#break-num').html(breakTime);
-      });
-      $('#break-less').click(function() {
-        if (breakTime > 1) {
-          breakTime--;
-        }
-        $('#break-num').html(breakTime);
-      });
+      const sessionLength = document.querySelector('#session-num');
+      sessionLength.textContent=(currentSession);
 
-      $('#start-button').click(function() {
+      // Break time buttons
+      const breakLength = document.querySelector('#break-num');
+      breakLength.textContent=(breakTime);
 
-        switch (i) {
+      // Session length displayed
+    const timerDisplay = document.querySelector('#time');
 
-          case 0:      
-            currentSession = sessionLength;
-            seconds = currentSession * 60;
-            minutes = Math.round(currentSession);
-            onlyseconds = 0;
-            i = 1;
-            if (j === 0 ) {
-              started();  
-            }
-            else
-              breakTimeStart();
-            break;
 
-          case 1:
-            i = 0;
-            stopped();
-            break;
-        }
-      });
+    // Start the timer
 
-      function started() {
-        $('#reset-button').hide();
-        currentSession = sessionLength;
-         $('#start-button').text('Pause');
-        j = 0;
-        $('#remaining-time').html('Time remaining:');
-        seconds -= 1;
-        if (onlyseconds <= 0.999) {
-          minutes--;
-        }
-        onlyseconds = seconds % 60;
-        onlyseconds = onlyseconds.toFixed(0);
-        if (onlyseconds < 10) {
-          onlyseconds = '0' + onlyseconds;
-        }
-        $('#time').html(minutes + ':' + onlyseconds);
-        if (minutes < 0) {
-          $('#time').html('0:00');
-        }
-  
-        if (minutes >= 0) {
-          timer = setTimeout(function() {
-            started();
-          }, 1000);
-        } else {
-          playSound();
-          breakTimeStart();
-        }
-      };
+    const startTimerButton = document.querySelector('#start-button');
 
-      function breakTimeStart() {
-        j = 1;
-        currentSession = breakTime;
-        seconds = currentSession * 60;
-        minutes = currentSession;
-        onlyseconds = 0;
-        
-        breaktime();
-      };
 
-      function breaktime() {
-        $('#remaining-time').html('Break time');
-        seconds -= 1;
-        if (onlyseconds <= 0.999) {
-          minutes--;
-        }
-        onlyseconds = seconds % 60;
-        onlyseconds = onlyseconds.toFixed(0);
-        if (onlyseconds < 10) {
-          onlyseconds = '0' + onlyseconds;
-        }
-        $('#time').html(minutes + ':' + " " + onlyseconds);
-        if (minutes < 0) {
-          $('#time').html('0:00');
-        }
-        if (minutes >= 0) {
-          timer = setTimeout(function() {
-            breaktime();
-          }, 1000);
-        } else {
-          playSound();
-        }
+    startButton(){
+
+      if (!started) {
+        startTimerButton.addEventListener('click', () =>{
+        startTimer();
+        startTimerButton.textContent=('Pause');
+      })
       }
-      if (minutes < 0) {
-        $('#time').html('0:00');
-      }
+      else if (started) {
+        startTimerButton.addEventListener('click', () =>{
+        clearInterval(countDown);
+      console.log('nope.');
+      })
+    }
+        }
 
-      function stopped() {
-        $('#reset-button').show();
-        sessionLength = seconds / 60;
-        clearTimeout(timer);
-        $('#start-button').text('Start');
-      }
 
-      /* Play sound */
+
+function startTimer(sessionLength) { 
+  countDown = setInterval(() => {
+    seconds--;
+    minutes = Math.floor(seconds / 60);
+    remainderSeconds = seconds % 60; 
+    
+    started = true;
+    console.log(minutes);
+    console.log(seconds);
+
+if (seconds < 0) {
+  clearInterval(countDown);
+  currentSession = breakTime;
+  seconds = breakTime * 60;
+  startBreakTimer(breakTime);
+  playSound();
+}
+displayTime();
+}, 1000);
+}
+
+function displayTime() {
+ timerDisplay.textContent = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+}
+
+      const increaseSession = document.getElementById('session-more');
+      const increaseBreakTime = document.getElementById('break-more');   
+
+increaseSession.addEventListener('click', increaseTime);
+increaseBreakTime.addEventListener('click', increaseTime);
+
+
+// Increase session or break time
+
+function increaseTime(e) {
+
+if(e.target == increaseSession){
+currentSession++;
+minutes = currentSession;
+displayTime();
+sessionLength.textContent=(currentSession);
+}
+else if(e.target == increaseBreakTime) {
+  breakTime++;
+  breakLength.textContent=(breakTime);
+}
+} 
+
+// Decrease session or break time
+
+    const reduceBreakTime = document.getElementById('break-less'); 
+    const reduceSession = document.getElementById('session-less');
+
+reduceSession.addEventListener('click', decreaseTime);
+reduceBreakTime.addEventListener('click', decreaseTime);
+
+function decreaseTime(e) {
+
+if(e.target == reduceSession){
+currentSession--;
+minutes = currentSession;
+displayTime();
+sessionLength.textContent=(currentSession);
+}
+
+else if(e.target == reduceBreakTime) {
+  breakTime--;
+  breakLength.textContent=(breakTime);
+}
+} 
+
+// Play a sound when timer has finished
 
       function playSound() {
         var gong = new Audio('Temple_Bell.mp3');
         gong.play();
       }
 
-      /* Reset button */
-
-      $('#reset-button').click(function() {
-        clearTimeout(timer);
-        i = 0;
-        j = 0;
-        breakTime = 6;
-        timer = 0;
-        seconds = currentSession * 60;
-        onlyseconds = 0;
-        minutes = 0;
-        sessionLength = currentSession;
-        $('#start-button').text('Start');
-        $('#time').html(Math.round(currentSession)+":00");
-      });
-
-    });
-
-
-  // Source: http://www.antiyes.com/jquery-blink-plugin
-// http://www.antiyes.com/jquery-blink/jquery-blink.js
-//(function($) {
-  // $.fn.blink = function(options) {
-      //  var defaults = {
-        //    delay: 500
-       // };
-       // var options = $.extend(defaults, options);
-
-      //  return this.each(function() {
-      //      var obj = $(this);
-      //      setInterval(function() {
-       //         if ($(obj).css("visibility") == "visible") {
-       //             $(obj).css('visibility', 'hidden');
-       //         }
-       //         else {
-       //             $(obj).css('visibility', 'visible');
-       //         }
-      //      }, options.delay);
-      //  });
-   // }
-//}(jQuery)) 
-
-/////////////////////////////////////////////
-///////////////////////////////////////////// 
-/////////////////////////////////////////////
-
-/// $(document).ready(function() {
- // default is 500ms blink interval.
-   // $('.blink_second').blink({
-       // delay: 100
-   // }); // causes a 100ms blink interval.
-   // $('.blink_third').blink({
-     //   delay: 1500
-  //  }); // causes a 1500ms blink interval.     
-//});
-
-/////////////////////////////////////////////
-///////////////////////////////////////////// 
-///////////////////////////////////////////// 
