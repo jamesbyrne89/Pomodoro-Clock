@@ -57,12 +57,13 @@ h1 {
 
 h2 {
 	margin: 0 auto;
-	font-family: inherit;
+	font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
 }
 
 a {
 	color: #ff4632;
 	text-decoration: none;
+	
 }
 
 a:hover {
