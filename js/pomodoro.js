@@ -61,7 +61,7 @@ if (seconds <= 0) {
   currentSession = breakTime;
   seconds = breakTime * 60;
   startBreakTimer(breakTime);
-  // playSound();
+  playSound();
 }
 displayTime();
 
@@ -154,7 +154,7 @@ if (seconds <= 0) {
   clearInterval(countDown);
   seconds = currentSession * 60;
   startTimer(currentSession);
-  // playSound();
+  playSound();
   return;
 
 }
