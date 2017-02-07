@@ -1,0 +1,96 @@
+/*--------------------------------------------------------------
+## Buttons - top
+--------------------------------------------------------------*/
+
+.btn-wrapper-small {
+	margin-bottom: 50px;
+	display: inline-block;
+	font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
+}
+
+.buttons-wrapper {
+	margin: 0px auto 30px auto;
+	display: inline-block;
+	font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
+}
+
+.top-btn-wrapper__inner {
+	display: flex;
+	align-items: center;
+}
+
+.top-btn-wrapper__label {
+	margin: 0 auto;
+	font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
+	margin-bottom: 20px;
+}
+
+.session-num {
+	display: inline-block;
+	width: 1em;
+	margin-bottom: 0px;
+	text-align: center;
+	font-size: 3rem;
+	vertical-align: baseline;
+	font-weight: bold;
+	font-family: 'Brandon Grotesque Bold', helvetica, arial, sans-serif;
+}
+
+.sm-btn {
+	color: #000;
+	font-size: 2.5rem;
+	margin: 0px 2rem;
+	cursor: pointer;
+	padding: 4px;
+	border: solid 2px #000;
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+	background: transparent;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.less {
+		line-height: 0.125rem;
+}
+
+
+#session-more, #break-more {
+		line-height: 2.6rem;
+}
+
+.sm-btn:hover {
+	background: #000;
+	color: #ffc864;
+	transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+
+}
+
+/*--------------------------------------------------------------
+## Buttons - bottom
+--------------------------------------------------------------*/
+
+.lg-btn {
+	padding: 15px 56px 13px;
+	font-family: 'Brandon Grotesque Bold', helvetica, arial, sans-serif;
+	color: #fff;
+	font-size: 1.25rem;
+	background: #ff4632;
+	width: 280px;
+	border: none;
+	border-radius: 100px;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	display: block;
+	margin: 25px auto;
+	letter-spacing: 0.1875rem;
+}
+
+.lg-btn:hover {
+	background: #8c1932;
+	    transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+}

@@ -1,0 +1,35 @@
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+
+.app-title {
+	font-family: 'Brandon Grotesque Bold', helvetica, arial, sans-serif;
+	font-weight: bold;
+	font-size: 4.5rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5rem;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.app-subtitle {
+	font-size: 0.875rem;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 50px;
+	position: relative;
+	top: 0px;
+	padding: 0px;
+	display: block;
+	box-sizing: border-box;
+}
+
+a {
+	color: #ff4632;
+	text-decoration: none;	
+}
+
+a:hover {
+color: #8c1932;
+	    transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+}

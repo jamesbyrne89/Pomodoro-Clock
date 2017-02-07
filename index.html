@@ -1,69 +1,63 @@
 <!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Pomodoro Clock by James Byrne | Front End Web Developer in London</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html class="no-js" lang="en">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/pomodoro.css">
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Pomodoro Clock by James Byrne | Front End Web Developer in London</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="app-wrapper">
-<h1>Pomodoro</h1>
-      <footer>
-      A coding project by <a href="http://jamestbyrne.com">James Byrne</a>
-      </footer> 
-<div class="buttons-wrapper top-btn-wrapper">
-    <h2>Session length:</h2>
-    <div class="top-btn-wrapper--inner">
-        <input type="button" id="session-less" class="btn" value="-">
-        <h2 id="session-num">25</h2>
-        <input type="button" id="session-more" class="btn" value="+">
-</div>
-</div>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="assets/styles/css/base/styles.css">
+</head>
 
-<div class="buttons-wrapper bottom-btn-wrapper">
-    <h2>Break length:</h2>
-    <div class="top-btn-wrapper--inner">
-        <input type="button" id="break-less" class="btn" value="-">
-            <h2 id="break-num">5</h2>
-        <input type="button" id="break-more" class="btn" value="+">
- </div>     
-</div>
-   
-<div class="timer-wrapper">
-   <h2 id="remaining-time">Session length:</h2>
+<body>
 
-       <div class='clock' id='grad'>
-    
- <div id='clock'>
-      <time id='time'>25:00</time>
-    </div>
-    <div id='changes'>
-      </div>
-      </div>
-      <div>
-      </div>
-    </div>
+    <main class="app-wrapper">
+        <h1 class="app-title">Pomodoro</h1>
+        <h2 class="app-subtitle">
+            A coding project by <a href="http://jamestbyrne.com">James Byrne</a>
+        </h2>
+        <div class="btn-wrapper-small">
+            <h3 class="top-btn-wrapper__label">Session length:</h3>
+            <div class="top-btn-wrapper__inner">
+                <button id="session-less" class="sm-btn less">-</button>
+                <h2 class=" session-num" id="session-num">25</h2>
+                <button id="session-more" class="sm-btn">+</button>
+            </div>
+        </div>
 
-<button id="start-button" class="lg-btn">Start</button>
-    <button id="reset-button" class="lg-btn">Reset</button>
-    </div>
-    
+        <div class="btn-wrapper-small">
+            <h3 class="top-btn-wrapper__label">Break length:</h3>
+            <div class="top-btn-wrapper__inner">
+                <button id="break-less" class="sm-btn less">-</button>
+                <h2 class=" session-num" id="break-num">5</h2>
+                <button id="break-more" class="sm-btn">+</button>
+            </div>
+        </div>
 
-</div> 
+        <div class="timer">
+            <h2 id="timer__time-left" class="timer__time-left">Session length:</h2>
 
-</div>
-    
-    </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="js/pomodoro.js"></script>
-    </body>
+                    <time class="timer__counter" id='time'>25:00</time>
+        </div>
+
+        <button id="start-button" class="lg-btn">Start</button>
+        <button id="reset-button" class="lg-btn">Reset</button>
+        </div>
+        </div>
+
+        </div>
+
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
+    </script>
+    <script src="assets/scripts/app.js"></script>
+</body>
+
 </html>
