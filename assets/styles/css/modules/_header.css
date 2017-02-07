@@ -10,6 +10,12 @@
 	letter-spacing: 0.5rem;
 	margin-bottom: 0px;
 	margin-top: 0px;
+	@mixin at475 {
+	font-size: 2.5rem;
+  }
+  	@mixin at360 {
+	font-size: 2rem;
+  }
 }
 
 .app-subtitle {
@@ -22,6 +28,9 @@
 	padding: 0px;
 	display: block;
 	box-sizing: border-box;
+		@mixin at475 {
+	font-size: 0.875rem;
+  }
 }
 
 a {
