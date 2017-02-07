@@ -22,12 +22,9 @@ display: flex;
 
 .app-wrapper {
 	margin: auto;
-	width: 50%;
+	width: auto;
 	max-height: 90vh;
 	overflow: hidden;
-	        @mixin at900 {
-		width: 80%;
-  }
   	        @mixin at475 {
 		width: 95%;
   }

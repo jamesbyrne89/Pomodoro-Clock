@@ -59,16 +59,9 @@ display: flex;
 
 .app-wrapper {
 	margin: auto;
-	width: 50%;
+	width: auto;
 	max-height: 90vh;
 	overflow: hidden;
-}
-
-@media (max-width: 900px) {
-
-.app-wrapper {
-width: 80%;
-}
 }
 
 @media (max-width: 475px) {
