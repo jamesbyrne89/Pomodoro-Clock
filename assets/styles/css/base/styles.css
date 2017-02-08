@@ -88,7 +88,7 @@ width: 95%;
 @media (max-width: 475px) {
 
 .app-title {
-font-size: 2.5rem;
+font-size: 2.75rem;
 }
 }
 
@@ -206,6 +206,7 @@ justify-content: space-around;
 .btn-wrapper-small {
 	display: inline-block;
 	font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
+	
 
 }
 
