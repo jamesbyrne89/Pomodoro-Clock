@@ -80,7 +80,8 @@ width: 95%;
 	font-weight: bold;
 	font-size: 4.5rem;
 	text-transform: uppercase;
-	letter-spacing: 0.125em;
+	letter-spacing: 0.25em;
+	text-align: center;
 	margin-bottom: 0px;
 	margin-top: 0px;
 }
@@ -88,7 +89,7 @@ width: 95%;
 @media (max-width: 475px) {
 
 .app-title {
-font-size: 2.75rem;
+font-size: 2.5rem;
 }
 }
 
@@ -208,6 +209,9 @@ justify-content: space-around;
 .btn-wrapper-small {
 	display: inline-block;
 	font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
+	-webkit-box-flex: 0;
+	    -ms-flex: 0 0 40%;
+	        flex: 0 0 40%;
 
 }
 
@@ -238,6 +242,7 @@ justify-content: space-around;
 .top-btn-wrapper__label {
 font-size: 1rem;
 margin-bottom: 15px;
+max-width: 80%;
 }
 }
 
