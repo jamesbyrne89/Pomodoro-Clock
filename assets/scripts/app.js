@@ -47,7 +47,7 @@ const startButton =  startTimerButton.addEventListener('click', () =>{
 // Start session timer
 
 function startTimer(currentSession) { 
-timeLeftDisplay.textContent = `Time remaining:`;
+timeLeftDisplay.textContent=(`Time remaining:`);
   started = true;
   displayTime();
   countDown = setInterval(() => {
@@ -72,11 +72,7 @@ displayTime();
 
 function displayTime() {
  timerDisplay.textContent = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
- console.log("seconds / 60: " + (seconds / 60), "breaktime: " + breakTime);
-
- console.log('break time started? ' + breakTime);
  if (minutes == currentSession) {
-  timeLeftDisplay.textContent = `Session length:`;
  }
  return;
 }
@@ -103,7 +99,6 @@ sessionLength.textContent=(currentSession);
 else if(e.target == increaseBreakTime) {
   breakTime++;
   breakLength.textContent=(breakTime);
-  console.log(breakTime);
 }
 } 
 
@@ -186,4 +181,5 @@ const resetTimer =  resetButton.addEventListener('click', () =>{
      displayTime();
     started = false;
     startTimerButton.textContent=('Start');
+    timeLeftDisplay.textContent=(`Session length:`);
 });

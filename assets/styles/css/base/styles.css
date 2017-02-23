@@ -80,7 +80,7 @@ width: 95%;
 	font-weight: bold;
 	font-size: 4.5rem;
 	text-transform: uppercase;
-	letter-spacing: 0.5rem;
+	letter-spacing: 0.125em;
 	margin-bottom: 0px;
 	margin-top: 0px;
 }
@@ -160,15 +160,17 @@ margin-bottom: 35px;
 
 .timer__time-left {
 	display: block;
-	font-size: 2.5rem;
+	font-size: 1.5rem;
+	letter-spacing: 0.125em;
 	font-family: 'Brandon Grotesque Bold', helvetica, arial, sans-serif;
+	text-transform: uppercase;
 	margin-bottom: 25px;
 }
 
 @media (max-width: 475px) {
 
 .timer__time-left {
-font-size: 1.75rem;
+font-size: 1.25rem;
 margin-bottom: 10px;
 }
 }
@@ -176,7 +178,7 @@ margin-bottom: 10px;
 @media (max-width: 360px) {
 
 .timer__time-left {
-font-size: 1.5rem;
+font-size: 1.25rem;
 margin-bottom: 5px;
 }
 }
@@ -206,7 +208,6 @@ justify-content: space-around;
 .btn-wrapper-small {
 	display: inline-block;
 	font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
-	
 
 }
 
@@ -226,14 +227,17 @@ justify-content: space-around;
 .top-btn-wrapper__label {
 	margin: 0 auto;
 	font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	letter-spacing: 0.125em;
 	margin-bottom: 20px;
 }
 
 @media (max-width: 475px) {
 
 .top-btn-wrapper__label {
-font-size: 1.25rem;
-margin-bottom: 5px;
+font-size: 1rem;
+margin-bottom: 15px;
 }
 }
 

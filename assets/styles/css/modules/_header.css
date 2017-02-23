@@ -7,7 +7,7 @@
 	font-weight: bold;
 	font-size: 4.5rem;
 	text-transform: uppercase;
-	letter-spacing: 0.5rem;
+	letter-spacing: 0.125em;
 	margin-bottom: 0px;
 	margin-top: 0px;
 	@mixin at475 {

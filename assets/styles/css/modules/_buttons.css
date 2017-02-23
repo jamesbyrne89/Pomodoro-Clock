@@ -14,7 +14,6 @@
 .btn-wrapper-small {
 	display: inline-block;
 	font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
-	
 
 }
 
@@ -28,10 +27,13 @@
 .top-btn-wrapper__label {
 	margin: 0 auto;
 	font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	letter-spacing: 0.125em;
 	margin-bottom: 20px;
 			 @mixin at475 {
-		font-size: 1.25rem;
-		margin-bottom: 5px;
+			 	font-size: 1rem;
+		margin-bottom: 15px;
   }
   	@mixin at360 {
 	font-size: 1rem;
