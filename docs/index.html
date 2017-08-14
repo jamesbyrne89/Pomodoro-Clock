@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Pomodoro Clock by James Byrne | Front End Web Developer in London</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="assets/styles/styles-117a3ff06e.css"/>
+</head>
+
+<body>
+
+    <main class="app-wrapper">
+        <h1 class="app-title">Pomodoro</h1>
+        <h2 class="app-subtitle">
+            A coding project by <a href="http://jamestbyrne.com">James Byrne</a>
+        </h2>
+        <div class="top-btn-wrapper">
+        <div class="btn-wrapper-small">
+            <h3 class="top-btn-wrapper__label">Session length:</h3>
+            <div class="top-btn-wrapper__inner">
+                <button id="session-less" class="sm-btn less"><span class="sm-btn__text">-</span></button>
+                <h2 class=" session-num" id="session-num">25</h2>
+                <button id="session-more" class="sm-btn more"><span class="sm-btn__text">+</span></button>
+            </div>
+        </div>
+
+        <div class="btn-wrapper-small">
+            <h3 class="top-btn-wrapper__label">Break length:</h3>
+            <div class="top-btn-wrapper__inner">
+                <button id="break-less" class="sm-btn less"><span class="sm-btn__text">-</span></button>
+                <h2 class=" session-num" id="break-num">5</h2>
+                <button id="break-more" class="sm-btn more"><span class="sm-btn__text">+</span></button>
+            </div>
+        </div>
+        </div>
+
+        <div class="timer">
+            <h2 id="timer__time-left" class="timer__time-left">Session length:</h2>
+
+                    <time class="timer__counter" id='time'>25:00</time>
+        </div>
+
+        <button id="start-button" class="lg-btn">Start</button>
+        <button id="reset-button" class="lg-btn">Reset</button>
+        </div>
+        </div>
+
+        </div>
+
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')
+    </script>
+  <script src="assets/scripts/app-c995ff9029.js"></script>
+</body>
+
+</html>
