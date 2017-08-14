@@ -1,3 +1,19 @@
+// Register service worker
+
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('/sw.js', {
+		scope: './'
+	})
+	.then(function(registration) {
+		console.log('Yay!!')
+	})
+	.catch(function(error) {
+		console.log('Failed to register because: ', error)
+	})
+};
+
+
+
    // Declare variables
 
   let currentSession = 25;
