@@ -84,14 +84,8 @@ watch('app/assets/scripts/app.js', function(){
   browserSync.reload();
 });
 
-gulp.task('prettier', () => {
-    gulp.src('assets/scripts/app.js')
-    .pipe(prettier({useFlowParser: true}))
-    .pipe(gulp.dest('assets/scripts/app.js'))
-});
 
 watch('app/assets/scripts/app.js', function(){
-  gulp.start('prettier');
   gulp.start('compressScripts');
 });
 
