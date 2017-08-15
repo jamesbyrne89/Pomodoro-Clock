@@ -1,0 +1,16 @@
+@define-mixin at360 {
+     @media (max-width: 360px) {
+     	@mixin-content;
+     }
+  }
+@define-mixin at600 {
+     @media (max-width: 600px) {
+     	@mixin-content;
+     }
+  }
+
+  @define-mixin at900 {
+     @media (max-width: 900px) {
+     	@mixin-content;
+     }
+  }

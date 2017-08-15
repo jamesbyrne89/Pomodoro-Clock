@@ -1,0 +1,37 @@
+/*--------------------------------------------------------------
+## General styles
+--------------------------------------------------------------*/
+
+
+::selection {
+	background: #ff4632 ;
+	color: #fff;
+}
+
+body {
+	background-color: #ffc864 ;
+color: #8c1932;
+border: solid 20px #fff;
+text-align: center;
+width: 100%;
+min-height: 100vh;
+font-family: 'Brandon Grotesque Regular', helvetica, arial, sans-serif;
+font-size: 1.25rem;
+display: flex;
+}
+
+.mouse-user ::focus,
+.mouse-user :focus,
+.mouse-user button::focus  {
+	outline: 0 !important;
+}
+
+.app-wrapper {
+	margin: auto;
+	width: auto;
+	max-height: 90vh;
+	overflow: hidden;
+  	        @mixin at600 {
+		width: 95%;
+  }
+}
