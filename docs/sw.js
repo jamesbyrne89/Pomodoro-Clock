@@ -1,13 +1,13 @@
-var cacheVersion = 'v4';
+var cacheVersion = 'v1';
 var cacheFiles = [
-	'/',
-	'/temp/assets/scripts/min/app.js',
-	'/temp/assets/styles/styles.css',
-	'/temp/assets/styles/fonts/Brandon_bld.WOFF',
-	'/temp/assets/styles/fonts/Brandon_blk.WOFF',
-	'/temp/assets/styles/fonts/Brandon_light.WOFF',
-	'/temp/assets/styles/fonts/Brandon_reg.WOFF',
-	'/temp/assets/styles/fonts/Brandon_thin.WOFF'
+	'',
+	'assets/scripts/min/app.js',
+	'assets/styles/styles.css',
+	'assets/styles/fonts/Brandon_bld.WOFF',
+	'assets/styles/fonts/Brandon_blk.WOFF',
+	'assets/styles/fonts/Brandon_light.WOFF',
+	'assets/styles/fonts/Brandon_reg.WOFF',
+	'assets/styles/fonts/Brandon_thin.WOFF'
 ];
 
 self.addEventListener('install', function(e) {
