@@ -12,6 +12,15 @@ if ('serviceWorker' in navigator) {
   });
 };
 
+/**
+ * Listens for a mousemove to remove the focus ring from elements if the user is using a mouse.
+ */
+function checkForMouseUse() {
+  document.body.classList.add('mouse-user');
+  document.body.removeEventListener('mousemove', checkForMouseUse);
+}
+document.body.addEventListener('mousemove', checkForMouseUse);
+
 // Declare variables
 
 var currentSession = 25;
@@ -93,15 +102,15 @@ increaseSession.addEventListener('click', increaseTime);
 increaseBreakTime.addEventListener('click', increaseTime);
 
 function increaseTime(e) {
-
-  if (e.target == increaseSession) {
+  console.log(e.target);
+  if (e.target === increaseSession) {
     currentSession++;
     minutes = currentSession;
     seconds = currentSession * 60;
     remainderSeconds = seconds % 60;
     displayTime();
     sessionLength.textContent = currentSession;
-  } else if (e.target == increaseBreakTime) {
+  } else if (e.target === increaseBreakTime) {
     breakTime++;
     breakLength.textContent = breakTime;
   }
@@ -128,7 +137,7 @@ function decreaseTime(e) {
       displayTime();
       sessionLength.textContent = currentSession;
     }
-  } else if (e.target == reduceBreakTime) {
+  } else if (e.target === reduceBreakTime) {
     if (breakTime < 2) {
       return;
     } else {

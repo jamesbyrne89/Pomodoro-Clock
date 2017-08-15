@@ -20,12 +20,18 @@ font-size: 1.25rem;
 display: flex;
 }
 
+.mouse-user ::focus,
+.mouse-user :focus,
+.mouse-user button::focus  {
+	outline: 0 !important;
+}
+
 .app-wrapper {
 	margin: auto;
 	width: auto;
 	max-height: 90vh;
 	overflow: hidden;
-  	        @mixin at475 {
+  	        @mixin at600 {
 		width: 95%;
   }
 }

@@ -5,7 +5,7 @@
 .timer {
 	margin-bottom: 50px;
 	font-size: 5.5rem;
-			 @mixin at475 {
+			 @mixin at600 {
 		font-size: 4rem;
 		margin-top: 25px;
 		margin-bottom: 50px;
@@ -26,7 +26,7 @@
 	font-family: 'Brandon Grotesque Bold', helvetica, arial, sans-serif;
 	text-transform: uppercase;
 	margin-bottom: 25px;
-			 @mixin at475 {
+			 @mixin at600 {
 		font-size: 1.25rem;
 		margin-bottom: 10px;
   }

@@ -11,7 +11,7 @@
 	text-align: center;
 	margin-bottom: 0px;
 	margin-top: 0px;
-	@mixin at475 {
+	@mixin at600 {
 	font-size: 2.5rem;
   }
   	@mixin at360 {
@@ -29,7 +29,7 @@
 	padding: 0px;
 	display: block;
 	box-sizing: border-box;
-		@mixin at475 {
+		@mixin at600 {
 	font-size: 0.875rem;
   }
 }
