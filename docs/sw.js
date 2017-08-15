@@ -1,8 +1,8 @@
 var cacheVersion = 'v1';
 var cacheFiles = [
 	'',
-	'assets/scripts/min/app.js',
-	'assets/styles/styles.css',
+	'assets/scripts/app-f569fa4089.js',
+	'assets/styles/styles-70d0801410.css',
 	'assets/styles/fonts/Brandon_bld.WOFF',
 	'assets/styles/fonts/Brandon_blk.WOFF',
 	'assets/styles/fonts/Brandon_light.WOFF',
